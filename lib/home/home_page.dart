@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +15,15 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(onPressed: (){}, child: const Text('Join initial pool')),
-
-            ElevatedButton(onPressed: (){}, child: const Text('Check who is in the pool')),
-
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Join initial pool'),
+            ),
+            const Gap(24),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Check who is in the pool'),
+            ),
           ],
         ),
       ),
