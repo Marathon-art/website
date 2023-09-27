@@ -56,5 +56,21 @@ gen_assets:
 
 # Generate static file to access localized strings
 gen_strings:
-	cd ui && flutter pub global run intl_utils:generate
 	flutter pub global run intl_utils:generate
+
+gen_abis:
+	make copy_abis
+	cd contracts_api && dart run build_runner build --delete-conflicting-outputs
+
+copy_abis:
+	# Create the directory if it doesn't exist
+	mkdir -p contracts_api/lib/abis
+	# Remove all old files from the directory
+	rm -f contracts_api/lib/abis/*
+	# Copy and rename the new ABI files
+	find ../contracts/artifacts/contracts/ -type f -exec basename {} \; | \
+	grep -E "^[a-zA-Z]+\.json$$" | \
+	while read -r file; do \
+		new_file=$$(echo $$file | sed 's/\.json$$/.abi.json/'); \
+		find ../contracts/artifacts/contracts/ -type f -name "$$file" -exec cp {} contracts_api/lib/abis/$$new_file \; ; \
+	done
