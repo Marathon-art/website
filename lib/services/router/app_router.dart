@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:marathon/home/home_page.dart';
+import 'package:marathon/features/home/home_page.dart';
 
 final appRouterProvider = Provider((ref) => AppRouter());
 
