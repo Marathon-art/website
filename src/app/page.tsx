@@ -1,6 +1,14 @@
-import React from 'react';
+// /src/app/page.tsx
 
-const Home = () => {
+import React from 'react';
+import ButtonPrimary from './components/ButtonPrimary'; // Adjust the path as needed
+
+const Home: React.FC = () => {
+  const handleButtonClick = (buttonNumber: number) => {
+    // Add your button click logic here, you can differentiate based on buttonNumber
+    alert(`Button ${buttonNumber} clicked!`);
+  };
+
   return (
     <div style={{
       background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -11,36 +19,21 @@ const Home = () => {
       justifyContent: 'center'
     }}>
       <h1 style={{ color: 'white' }}>Hello, this is the home page!</h1>
-      <button style={{
-        margin: '10px',
-        padding: '15px 30px',
-        fontSize: '16px',
-        borderRadius: '5px',
-        border: 'none',
-        cursor: 'pointer',
-        backgroundColor: '#4CAF50',
-        color: 'white'
-      }}>Button 1</button>
-      <button style={{
-        margin: '10px',
-        padding: '15px 30px',
-        fontSize: '16px',
-        borderRadius: '5px',
-        border: 'none',
-        cursor: 'pointer',
-        backgroundColor: '#008CBA',
-        color: 'white'
-      }}>Button 2</button>
-      <button style={{
-        margin: '10px',
-        padding: '15px 30px',
-        fontSize: '16px',
-        borderRadius: '5px',
-        border: 'none',
-        cursor: 'pointer',
-        backgroundColor: '#f44336',
-        color: 'white'
-      }}>Button 3</button>
+      <ButtonPrimary
+        text="Button 1"
+        backgroundColor="#4CAF50"
+        // onClick={() => handleButtonClick(1)}
+      />
+      <ButtonPrimary
+        text="Button 2"
+        backgroundColor="#008CBA"
+        // onClick={() => handleButtonClick(2)}
+      />
+      <ButtonPrimary
+        text="Button 3"
+        backgroundColor="#f44336"
+        // onClick={() => handleButtonClick(3)}
+      />
     </div>
   );
 };
