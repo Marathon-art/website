@@ -1,7 +1,7 @@
-// /src/app/page.tsx
+'use client'
 
 import React from 'react';
-import ButtonPrimary from './components/ButtonPrimary'; // Adjust the path as needed
+import ButtonPrimary from '../components/ButtonPrimary'; // Adjust the path as needed
 
 const Home: React.FC = () => {
   const handleButtonClick = (buttonNumber: number) => {
@@ -22,17 +22,17 @@ const Home: React.FC = () => {
       <ButtonPrimary
         text="Button 1"
         backgroundColor="#4CAF50"
-        // onClick={() => handleButtonClick(1)}
+        onClick={() => handleButtonClick(1)}
       />
       <ButtonPrimary
         text="Button 2"
         backgroundColor="#008CBA"
-        // onClick={() => handleButtonClick(2)}
+        onClick={() => handleButtonClick(2)}
       />
       <ButtonPrimary
         text="Button 3"
         backgroundColor="#f44336"
-        // onClick={() => handleButtonClick(3)}
+        onClick={() => handleButtonClick(3)}
       />
     </div>
   );
