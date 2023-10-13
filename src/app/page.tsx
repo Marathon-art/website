@@ -1,14 +1,12 @@
 'use client'
 
+// pages/index.tsx
 import React from 'react';
-import ButtonPrimary from '../components/ButtonPrimary'; // Adjust the path as needed
+import ButtonPrimaryLink from './components/ButtonPrimaryLink'; // Adjust the path as needed
 
+
+//
 const Home: React.FC = () => {
-  const handleButtonClick = (buttonNumber: number) => {
-    // Add your button click logic here, you can differentiate based on buttonNumber
-    alert(`Button ${buttonNumber} clicked!`);
-  };
-
   return (
     <div style={{
       background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -19,20 +17,15 @@ const Home: React.FC = () => {
       justifyContent: 'center'
     }}>
       <h1 style={{ color: 'white' }}>Hello, this is the home page!</h1>
-      <ButtonPrimary
-        text="Button 1"
+      <ButtonPrimaryLink
+        text="Go to Registration Page"
         backgroundColor="#4CAF50"
-        onClick={() => handleButtonClick(1)}
+        href="/registration"
       />
-      <ButtonPrimary
-        text="Button 2"
+      <ButtonPrimaryLink
+        text="Go to Submissions"
         backgroundColor="#008CBA"
-        onClick={() => handleButtonClick(2)}
-      />
-      <ButtonPrimary
-        text="Button 3"
-        backgroundColor="#f44336"
-        onClick={() => handleButtonClick(3)}
+        href="/submissions"
       />
     </div>
   );
