@@ -8,14 +8,7 @@ import ButtonPrimaryLink from './components/ButtonPrimaryLink'; // Adjust the pa
 //
 const Home: React.FC = () => {
   return (
-    <div style={{
-      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}>
+    <div className="page-container">
       <h1 style={{ color: 'white' }}>Hello, this is the home page!</h1>
       <ButtonPrimaryLink
         text="Go to Registration Page"
