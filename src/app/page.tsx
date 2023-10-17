@@ -5,7 +5,14 @@ import React from 'react';
 import ButtonPrimaryLink from './components/ButtonPrimaryLink'; // Adjust the path as needed
 
 
-//
+//todo Register for pool of artists
+//todo rall the dice to select initial artist
+//enable submission for current artist
+//submit art piece by current artist
+//display this art piece on submissions page
+//if artists referred to another artist this new artist is current artist now
+//if artist did not refer anyone new artist is selected from pool
+
 const Home: React.FC = () => {
   return (
     <div className="page-container">
