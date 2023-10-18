@@ -1,10 +1,11 @@
 import { Web3Auth } from "@web3auth/modal";
 
+const clientId = process.env.WEB3_AUTH_CLIENT_ID || "";
 
 export async function useWeb3AuthLogin() {
-    console.log('web3auth');
+    console.log('web3auth with clientId', clientId);
     const web3auth = new Web3Auth({
-        clientId: process.env.WEB3_AUTH_CLIENT_ID?.toString() ?? '',
+        clientId: clientId,
         web3AuthNetwork: "sapphire_mainnet",
         chainConfig: {
             chainNamespace: "eip155",
@@ -21,3 +22,7 @@ export async function useWeb3AuthLogin() {
     await web3auth.initModal();
     await web3auth.connect();
 };
+
+
+import React from 'react';
+
