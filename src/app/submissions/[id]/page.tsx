@@ -7,7 +7,7 @@ import Submission from '../../../app/components/Submission';
 
 const SubmissionDetailed: FC = () => {
   return (
-    <div className="page-container">
+    <div className="column-container">
       <h1 className="text-3xl" style={{ color: 'white' }}>Submission Detailed</h1>
       <p style={{ paddingTop: '16px' }} />
       <div style={{

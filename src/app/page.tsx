@@ -15,7 +15,7 @@ import ButtonPrimaryLink from './components/ButtonPrimaryLink'; // Adjust the pa
 
 const Home: React.FC = () => {
   return (
-    <div className="page-container">
+    <div className="column-container">
       <h1 style={{ color: 'white' }}>Hello, this is the home page!</h1>
       <ButtonPrimaryLink
         text="Go to Registration Page"

@@ -1,0 +1,8 @@
+/* ErrorDisplay.module.css */
+.errorContainer {
+  background-color: #f44336; /* Red background */
+  color: white;
+  margin: 20px 0;
+  padding: 15px;
+  text-align: center;
+}

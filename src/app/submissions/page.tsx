@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const Submissions: React.FC = () => {
   return (
-    <div className="page-container">
+    <div className="column-container">
       <h1 style={{ color: 'white' }}>Welcome to the Submissions Page!</h1>
       <p style={{ paddingTop: "16px" }} />
       <div style={{
