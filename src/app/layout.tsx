@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Providers } from './components/providers/Providers'
+// import { Providers } from './components/providers/Providers'
 import Footer from './components/footer/Footer'
 import Navbar from './components/navbar/Navbar'
 
@@ -20,13 +20,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen dark:bg-slate-900 antialiased">
-        <Providers>
+        {/* <Providers> */}
+
+          {/* <SessionInitializer> */}
           <Navbar />
           <div className="global-container">
             {children}
           </div>
           <Footer />
-        </Providers>
+          {/* </SessionInitializer> */}
+        {/* </Providers> */}
       </body>
     </html>
   )

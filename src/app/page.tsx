@@ -2,8 +2,7 @@
 
 // pages/index.tsx
 import React from 'react';
-import ButtonPrimaryLink from './components/ButtonPrimaryLink'; // Adjust the path as needed
-
+import ButtonPrimaryLink from './components/ButtonPrimaryLink'; 
 
 //todo Register for pool of artists
 //todo rall the dice to select initial artist

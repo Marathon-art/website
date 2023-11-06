@@ -1,35 +1,24 @@
-import { useEffect, useState } from 'react';
-import { useWeb3Auth } from './useWeb3Auth';
+import { retrieveSession } from '../session/retrieveSession';
+import useSessionStore from '../session/sessionStore';
+import useWeb3Auth from './useWeb3Auth';
+import RPC from "web3"; // for using web3.js
 
+export const useWeb3AuthLogin = () => {
+  const web3Auth = useWeb3Auth();
+  const setSession = useSessionStore((state) => state.setSession);
 
-
-const useWeb3AuthLogin = () => {
-  const web3auth = useWeb3Auth();
-
-  const [userInfo, setUserInfo] = useState<object | null>(null);
-  const [error, setError] = useState<Error | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-
-        if (web3auth.connected) {
-          console.log('connected');
-          const result = await web3auth.getUserInfo();
-          setUserInfo(result);
-        }
-        console.log('not connected');
-      } catch (e) {
-        console.log('error');
-        setError(e as Error);
+  const login = async () => {
+    console.log('logging in then with web3Auth', web3Auth);
+    console.log('web3Auth is connected', web3Auth?.connected);
+    if (web3Auth) {
+      if (!web3Auth.connected) {
+        await web3Auth.connect();
       }
-    };
 
-    fetchData();
-  }, [web3auth.connected]);
+      const session = await retrieveSession(web3Auth);
+      setSession(session);
+    }
+  };
 
-
-  return { userInfo, error };
+  return { login };
 };
-
-export default useWeb3AuthLogin;
